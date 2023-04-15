@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leaderboard</title>
+	<style>
+		#leaderboard {
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+#leaderboard h2 {
+  text-align: center;
+}
+
+#leaderboard table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#leaderboard th, #leaderboard td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+#leaderboard th {
+  background-color: #eee;
+}
+
+#leaderboard tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+	</style>
+</head>
+<body>
+	<div id="leaderboard">
+        <h2>Leaderboard</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Name</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-body">
+          </tbody>
+        </table>
+      </div>
+      
+	   <script>
+        const leaderboardBody = document.getElementById('leaderboard-body');
+
+        const leaderboardData = [];
+        async function getscore() {
+            const response = await fetch(`https://puzzle12backend.onrender.com/auth/getallscores`, {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+            const leaderboardData = await response.json();
+            console.log(leaderboardData)
+            if (leaderboardData != undefined) {
+                console.log(leaderboardData)
+                // Sort the data by score in descending order
+                leaderboardData.sort((a, b) => b.score - a.score);
+
+                // Loop through the data and add it to the leaderboard table
+                for (let i = 0; i < leaderboardData.length; i++) {
+                    const row = document.createElement('tr');
+                    const rankCell = document.createElement('td');
+                    const nameCell = document.createElement('td');
+                    const scoreCell = document.createElement('td');
+
+                    rankCell.textContent = i + 1;
+                    nameCell.textContent = leaderboardData[i].name;
+                    scoreCell.textContent = leaderboardData[i].score;
+
+                    row.appendChild(rankCell);
+                    row.appendChild(nameCell);
+                    row.appendChild(scoreCell);
+
+                    leaderboardBody.appendChild(row);
+                }
+            }
+            // console.log(leaderboardData)
+            // setallemails(json)
+        }
+
+        getscore()
+
+
+
+    </script>
+</body>
+</html>

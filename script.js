@@ -1,6 +1,7 @@
 let stopwatchInterval;
 let stopwatchStartTime;
 let stopwatchTime = 0;
+let finalscore = 98;
 // Define an array of clue objects
 console.log(localStorage.getItem("puzzle_token"));
 if (localStorage.getItem("puzzle_token" )== null) {
@@ -102,6 +103,7 @@ function checkAnswer(clueIndex) {
     if (currentClueIndex >= clueContainers.length) {
       showSuccessContainer();
       stopStopwatch()
+      updatescore()
     } else {
       // otherwise, hide the current clue container and show the next one
       clueContainers[currentClueIndex - 1].classList.add("hidden");
@@ -269,4 +271,50 @@ function formatStopwatchTime(time) {
 
 function pad(num) {
   return num.toString().padStart(2, "0");
+}
+
+async function updatescore(){
+  
+
+ const response2 = await fetch(
+        `https://puzzle12backend.onrender.com/auth/getuser`,
+        {
+          method: "POST",
+          
+          headers: {
+            "Content-Type": "application/json",
+            "auth-token":localStorage.getItem("puzzle_token")
+          },
+         
+        }
+        );
+
+  const json2 = await response2.json();
+  // console.log(json2)
+  let email = json2.email;
+  console.log(email)
+  
+   const response = await fetch(
+        `https://puzzle12backend.onrender.com/auth/addscore`,
+        {
+          method: "POST",
+          
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email:email, score:finalscore}),
+        }
+        );
+        const json = await response.json();
+        
+        if (json.sucess) {
+          console.log(json)
+          location.replace("https://puzzle12.netlify.app/leaderboard.html")
+          
+        }
+        else {
+          console.log(json)
+          alert("Enter Valid credentials")
+        }
+        
 }
