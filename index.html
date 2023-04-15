@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treasure Hunt Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stopwatch">
+    <p><span id="stopwatch">00:00:00.000</span></p>
+  </div>
+  <header class="blur">
+    <h1>Treasure Hunt Game</h1>
+    <p>Find the treasure by solving the clues!</p>
+    
+    <div>
+      <a style="color:  aqua;" href="login.html"  >Login</a>  
+      <a style="color: aqua;" href="user.html" id="login">Sign Up</a>
+    </div>
+  </header>
+  
+  <main>
+    <div id="welcome-container">
+      <h2>Welcome to the Treasure Hunt Game!</h2>
+      <p>Are you ready to begin?</p>
+      <button onclick="startGame()">Yes</button>
+    </div>
+    <div class="blur allclues">
+
+    <div class="clue-container">
+      <h2>Clue 1</h2>
+      <p>What comes once in a minute, twice in a moment, but never in a thousand years?</p>
+      <div>
+        <input type="text" id="clue-1" placeholder="Enter answer">
+        <button type="submit" onclick="checkAnswer(1)">Submit</button>
+      </div>
+      <div class="hint-container hidden" id="hint-1">
+        <p>Hint 1: The answer starts with the letter "M"</p>
+        <p>Hint 2: The answer is a unit of time</p>
+        <p>Hint 3: The answer is not "minute" or "moment"</p>
+      </div>
+    </div>
+    
+    <div class="clue-container">
+      <h2>Clue 2</h2>
+      <p>I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?</p>
+      <div>
+        <input type="text" id="clue-2" placeholder="Enter answer">
+        <button type="submit" onclick="checkAnswer(2)">Submit</button>
+      </div>
+      <div class="hint-container hidden" id="hint-2">
+        <p>Hint 1: The answer is a representation of a geographic area</p>
+        <p>Hint 2: The answer is often used for navigation</p>
+        <p>Hint 3: The answer is not a globe or a earth</p>
+      </div>
+    </div>
+    
+    <div class="clue-container">
+      <h2>Clue 3</h2>
+      <p>I am not alive, but I grow; I don't have lungs, but I need air; I don't have a mouth, but water kills me. What am I?</p>
+      <div>
+        <input type="text" id="clue-3" placeholder="Enter answer">
+        <button type="submit" onclick="checkAnswer(3)">Submit</button>
+      </div>
+      <div class="hint-container hidden" id="hint-3">
+        <p>Hint 1: The answer is a natural phenomenon</p>
+        <p>Hint 2: The answer is often associated with destruction</p>
+        <p>Hint 3: The answer is not a volcano or a storm</p>
+      </div>
+    </div>
+    
+    <div class="clue-container">
+      <h2>Clue 4</h2>
+      <p>The more you take, the more you leave behind. What am I?</p>
+      <div>
+        <input type="text" id="clue-4" placeholder="Enter answer">
+        <button type="submit" onclick="checkAnswer(4)">Submit</button>
+      </div>
+      <div class="hint-container hidden" id="hint-4">
+        <p>Hint 1: The answer relates to movement</p>
+        <p>Hint 2: The answer is often left behind unintentionally</p>
+        <p>Hint 3: The answer is not slippers or a trail</p>
+      </div>
+    </div>
+    <div class="clue-container">
+      <h2>Clue 5</h2>
+      <p>What starts with an E, ends with an E, but only contains one letter?</p>
+      <div>
+        <input type="text" id="clue-5" placeholder="Enter answer">
+        <button type="submit" onclick="checkAnswer(5)">Submit</button>
+      </div>
+      <div class="hint-container hidden" id="hint-5">
+        <p>Hint 1: The answer is a word with a single letter</p>
+        <p>Hint 2: The answer is often used for communication</p>
+        <p>Hint 3: The answer is not "email" or "emoji"</p>
+      </div>
+    </div>
+    </div>
+    <div id="success-container" class="hidden">
+      <h2>Congratulations!</h2>
+      <p>You have found the treasure!</p>
+      
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
+    

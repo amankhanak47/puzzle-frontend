@@ -1,0 +1,184 @@
+/* Set default styles for body and html */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+/* Set box-sizing to border-box for all elements */
+* {
+  box-sizing: inherit;
+}
+
+/* Set styles for header */
+header {
+  background-color: #393E46;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+#login{
+  margin-left:10px;
+}
+/* Set styles for main content */
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Set styles for clue containers */
+.clue-container {
+  border: 1px solid #DDD;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.clue-container h2 {
+  margin-top: 0;
+}
+
+.clue-container p {
+  margin-top: 10px;
+}
+
+.clue-container form {
+  margin-top: 10px;
+}
+
+.clue-container input[type="text"] {
+  padding: 5px;
+  font-size: 1.2rem;
+  border: 1px solid #DDD;
+  border-radius: 3px;
+  width: 70%;
+  margin-right: 10px;
+}
+
+.clue-container button[type="submit"] {
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  background-color: #393E46;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Set styles for hint containers */
+.hint-container {
+  background-color: #F6D55C;
+  color: #393E46;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.hint-container p {
+  margin-top: 5px;
+  font-size: 1.2rem;
+}
+
+/* Set styles for success container */
+#success-container {
+  background-color: #90BE6D;
+  color: #393E46;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#success-container h2 {
+  margin-top: 0;
+}
+
+#success-container p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+
+
+/* Set styles for welcome container */
+#welcome-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#welcome-container h2 {
+  margin-top: 0;
+}
+
+#welcome-container p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+#welcome-container button {
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  background-color: #393E46;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+
+button {
+  background-color: #4CAF50; /* Set the background color to green */
+  border: none; /* Remove the border */
+  color: white; /* Set the text color to white */
+  padding: 15px 32px; /* Add some padding */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Make it a block element */
+  font-size: 16px; /* Set font size */
+  margin: 4px 2px; /* Add some margin */
+  cursor: pointer; /* Set cursor style */
+}
+
+button:hover {
+  background-color: #3e8e41; /* Change the background color on hover */
+}
+
+button:active {
+  background-color: #f44336; /* Change the background color on click */
+  color: white; /* Change the text color on click */
+}
+
+.stopwatch{
+    float: right;
+      display: flex;
+      margin-right: 11px;
+      color: white;
+}
+.stopwatch p{
+  font-size: xx-large;
+}
+
+.blur{
+  filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
