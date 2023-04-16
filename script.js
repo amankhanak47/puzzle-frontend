@@ -1,7 +1,7 @@
 let stopwatchInterval;
 let stopwatchStartTime;
 let stopwatchTime = 0;
-let finalscore = 100;
+
 // Define an array of clue objects
 console.log(localStorage.getItem("puzzle_token"));
 if (localStorage.getItem("puzzle_token" )== null) {
@@ -136,7 +136,7 @@ function checkAnswer(clueIndex) {
   // check if the answer is correct
   if (checkAnswerForClue(clueIndex, answer)) {
     // increment the score and move to the next clue
-    score += 10;
+    // score += 10;
     currentClueIndex++;
     answerInput.disabled = true;
 
@@ -207,7 +207,8 @@ function showSuccessContainer() {
     // show the success container and display the score
     successContainer.classList.remove("hidden");
     const scoreDisplay = document.createElement("p");
-    scoreDisplay.textContent = `Score: ${score}`;
+  scoreDisplay.textContent = `Score: ${score}`;
+  console.log(score)
   successContainer.appendChild(scoreDisplay);
   
   }
@@ -351,7 +352,7 @@ async function updatescore(){
         
         if (json.sucess) {
           console.log(json)
-          location.replace("https://puzzle12.netlify.app/leaderboard.html")
+          // location.replace("https://puzzle12.netlify.app/leaderboard.html")
           
         }
         else {
