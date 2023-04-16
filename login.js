@@ -13,7 +13,7 @@ form.addEventListener("submit", async(e) => {
     
     
     
-    console.log(emailValue,passwordValue)
+    //console.log(emailValue,passwordValue)
     
     const response = await fetch(
         `https://puzzle12backend.onrender.com/auth/login`,
@@ -29,13 +29,13 @@ form.addEventListener("submit", async(e) => {
         const json = await response.json();
         
         if (json.sucess) {
-          console.log(json.authtoken)
+          //console.log(json.authtoken)
           localStorage.setItem("puzzle_token", json.authtoken)
           location.replace("https://puzzle12.netlify.app/")
           
         }
         else {
-          console.log(json)
+          //console.log(json)
           alert("Enter Valid credentials")
         }
         

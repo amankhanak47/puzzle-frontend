@@ -1,5 +1,7 @@
 body {
     font-family: Arial, sans-serif;
+    background-image:url("img1.jpeg");
+    background-size: cover;
   }
   
   h1 {
@@ -22,14 +24,14 @@ body {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #7d2a2a;
     box-sizing: border-box;
     margin-bottom: 20px;
   }
   
   input[type="submit"] {
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: yellow;
+    color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;

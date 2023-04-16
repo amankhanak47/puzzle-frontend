@@ -62,9 +62,9 @@
                 },
             });
             const leaderboardData = await response.json();
-            console.log(leaderboardData)
+            //console.log(leaderboardData)
             if (leaderboardData != undefined) {
-                console.log(leaderboardData)
+                //console.log(leaderboardData)
                 // Sort the data by score in descending order
                 leaderboardData.sort((a, b) => b.score - a.score);
 
@@ -86,7 +86,7 @@
                     leaderboardBody.appendChild(row);
                 }
             }
-            // console.log(leaderboardData)
+            // //console.log(leaderboardData)
             // setallemails(json)
         }
 
