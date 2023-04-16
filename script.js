@@ -48,7 +48,7 @@ const clues = [
   },
   {
     question: "What starts with an E, ends with an E, but only contains one letter?",
-    answer: "envelope",
+    answer: "eye",
     hints: [
       "Hint 1: The answer is a word with a single letter",
       "Hint 2: The answer is often used for communication",
@@ -144,7 +144,7 @@ function checkAnswerForClue(clueIndex, answer) {
       isCorrect = answer === "footsteps";
       break;
     case 5:
-      isCorrect = answer === "envelope";
+      isCorrect = answer === "eye";
       break;
     default:
       break;
