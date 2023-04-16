@@ -1,7 +1,7 @@
 let stopwatchInterval;
 let stopwatchStartTime;
 let stopwatchTime = 0;
-let finalscore = 98;
+let finalscore = 100;
 // Define an array of clue objects
 console.log(localStorage.getItem("puzzle_token"));
 if (localStorage.getItem("puzzle_token" )== null) {
@@ -66,6 +66,47 @@ const yesButton = document.getElementById("yes-button");
 
 let currentClueIndex = 0;
 let score = 0;
+let timeInSeconds = 110; // Example time used in seconds
+
+if (timeInSeconds <= 60) {
+  score = 100;
+} else if (timeInSeconds <= 120) {
+  score = 95;
+} else if (timeInSeconds <= 180) {
+  score = 90;
+}
+else if (timeInSeconds <= 240) {
+  score = 85;
+}
+else if (timeInSeconds <= 300) {
+  score = 80;
+}
+else if (timeInSeconds <= 360) {
+  score = 75;
+}
+else if (timeInSeconds <= 420) {
+  score = 70;
+}
+else if (timeInSeconds <= 480) {
+  score = 65;
+}
+else if (timeInSeconds <= 540) {
+  score = 60;
+}
+else if (timeInSeconds <= 600) {
+  score = 55;
+}
+else if (timeInSeconds <= 660) {
+  score = 50;
+}
+else if (timeInSeconds <= 720) {
+  score = 45;
+}
+else if (timeInSeconds < 780) {
+  score = 40;
+}
+
+console.log(`Your score is ${score}!`);
 
 // function to start the game
 function startGame() {
@@ -273,6 +314,7 @@ function pad(num) {
   return num.toString().padStart(2, "0");
 }
 
+
 async function updatescore(){
   
 
@@ -302,7 +344,7 @@ async function updatescore(){
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ email:email, score:finalscore}),
+          body: JSON.stringify({ email:email, score:score}),
         }
         );
         const json = await response.json();
