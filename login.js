@@ -30,7 +30,7 @@ form.addEventListener("submit", async(e) => {
         
         if (json.sucess) {
           //console.log(json.authtoken)
-          localStorage.setItem("puzzle_token", json.authtoken)
+          localStorage.setItem("puzzle-token", json.authtoken)
           location.replace("https://puzzle12.netlify.app/")
           
         }

@@ -3,8 +3,8 @@ let stopwatchStartTime;
 let stopwatchTime = 0;
 
 // Define an array of clue objects
-//console.log(localStorage.getItem("puzzle_token"));
-if (localStorage.getItem("puzzle_token" )== null) {
+//console.log(localStorage.getItem("puzzle-token"));
+if (localStorage.getItem("puzzle-token" )== null) {
   //console.log("first")
    window.location.href = "https://puzzle12.netlify.app/login.html";
 }
@@ -16,7 +16,7 @@ async function tryagain() {
           
           headers: {
             "Content-Type": "application/json",
-            "auth-token":localStorage.getItem("puzzle_token")
+            "auth-token":localStorage.getItem("puzzle-token")
           },
          
         }
@@ -357,7 +357,7 @@ else if (timeInSeconds < 780) {
           
           headers: {
             "Content-Type": "application/json",
-            "auth-token":localStorage.getItem("puzzle_token")
+            "auth-token":localStorage.getItem("puzzle-token")
           },
          
         }
