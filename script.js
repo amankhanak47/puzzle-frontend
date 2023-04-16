@@ -8,7 +8,31 @@ if (localStorage.getItem("puzzle_token" )== null) {
   //console.log("first")
    window.location.href = "https://puzzle12.netlify.app/login.html";
 }
+async function tryagain() {
+  const response2 = await fetch(
+        `https://puzzle12backend.onrender.com/auth/getuser`,
+        {
+          method: "POST",
+          
+          headers: {
+            "Content-Type": "application/json",
+            "auth-token":localStorage.getItem("puzzle_token")
+          },
+         
+        }
+        );
 
+  const json2 = await response2.json();
+  // console.log(json2)
+  if (json2.score==undefined) {
+    document.getElementsByClassName("welcome-container")[1].style.display="none"
+  }
+  else {
+    document.getElementsByClassName("welcome-container")[0].style.display="none"
+  }
+  
+}
+tryagain()
 const clues = [
   {
     question: "What comes once in a minute, twice in a moment, but never in a thousand years?",
@@ -75,6 +99,7 @@ let timeInSeconds = 0; // Example time used in seconds
 function startGame() {
   // hide the welcome container
   welcomeContainer.classList.add("hidden");
+  document.getElementsByClassName("welcome-container")[1].style.display="none"
   document.getElementsByClassName("blur")[0].style.filter = "none"
   document.getElementsByClassName("blur")[1].style.filter="none"
   startStopwatch()

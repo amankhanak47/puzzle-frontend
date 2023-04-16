@@ -24,10 +24,16 @@
   </header>
 
   <main>
-    <div id="welcome-container">
+    <div id="welcome-container" class="welcome-container">
       <h2>Welcome to the Treasure Hunt Game!</h2>
       <p>Are you ready to begin?</p>
       <button onclick="startGame()">Yes</button>
+    </div>
+    <div id="welcome-container" class="welcome-container">
+      <h2>You have already played!</h2>
+      <p>Do You Want To Try Again?</p>
+      <button onclick="startGame()">Yes</button>
+      <button><a style="color: white;" href="leaderboard.html">No</a></button>
     </div>
     <div class="blur allclues">
 
