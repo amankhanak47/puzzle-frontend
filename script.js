@@ -12,7 +12,7 @@ if (localStorage.getItem("puzzle_token" )== null) {
 const clues = [
   {
     question: "What comes once in a minute, twice in a moment, but never in a thousand years?",
-    answer: "moment",
+    answer: "m",
     hints: [
       "Hint 1: The answer starts with the letter 'M'",
       "Hint 2: The answer is a unit of time",
@@ -132,7 +132,7 @@ function checkAnswerForClue(clueIndex, answer) {
   let isCorrect = false;
   switch (clueIndex) {
     case 1:
-      isCorrect = answer === "moment";
+      isCorrect = answer === "m";
       break;
     case 2:
       isCorrect = answer === "map";
